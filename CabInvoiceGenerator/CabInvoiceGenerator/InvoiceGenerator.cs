@@ -30,7 +30,6 @@ namespace InvoiceGenerator
             }
 
         }
-        //calulating for uc1 and uc 5 normal and premium
         public double CalculateTotalFair(double distance, int time)
         {
             try
@@ -60,18 +59,5 @@ namespace InvoiceGenerator
 
             }
         }
-        //method overloading for multiple rides
-        public InvoiceSummery CalculateTotalFair(Ride[] rides)
-        {
-            double totalFair = 0;
-            foreach (Ride ride in rides)
-            {
-                totalFair += CalculateTotalFair(ride.distance, ride.time);
-            }
-            totalFair = Math.Max(totalFair, MINIMUM_FARE);
-            return new InvoiceSummery(rides.Length, totalFair);
-            //rides.Where(x => x.userID == 3);
-        }
     }
-
 }
