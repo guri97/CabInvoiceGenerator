@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace InvoiceGenerator
 {
-    public class InvoiceSummery : object
+    public class InvoiceSummary : object
     {
         public int numberofRides;
         public double totalFair;
         public double average;
-        public InvoiceSummery(int numberofRides, double totalFair)
+        public InvoiceSummary(int numberofRides, double totalFair)
         {
             this.numberofRides = numberofRides;
             this.totalFair = totalFair;
@@ -24,11 +24,11 @@ namespace InvoiceGenerator
             {
                 return false;
             }
-            if (!(obj is InvoiceSummery))
+            if (!(obj is InvoiceSummary))
             {
                 return false;
             }
-            InvoiceSummery imputedObject = (InvoiceSummery)obj;
+            InvoiceSummary imputedObject = (InvoiceSummary)obj;
             return this.numberofRides == imputedObject.numberofRides && this.totalFair == imputedObject.totalFair && this.average == imputedObject.average;
         }
     }
